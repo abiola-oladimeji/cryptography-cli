@@ -39,11 +39,7 @@ jobs:
           cd key_generator/source
           pip install -r requirements-dev.txt
           pip install -e .
-
+      
       - name: Run unit tests
-        run: |
-          cd key_generator/scripts
-          chmod +x run_tests.sh
-          ./run_tests.sh
-          
+        run: python -m pytest --import-mode=append tests/          
 
